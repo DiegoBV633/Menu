@@ -16,17 +16,17 @@ icon = pygame.image.load('imagenes/icono juego.png')
 pygame.display.set_icon(icon)
 
 #Imagen botones (momentaneo)
-play_img = pygame.image.load('imagenes/start.png')
+play_img = pygame.image.load('imagenes/start2.png')
 play_img = pygame.transform.scale_by(play_img, 1.4)
 play_pos = (298, 200)
 play_rect = play_img.get_rect(topleft=play_pos)
 
-instructions_img = pygame.image.load('imagenes/instructions.png')
+instructions_img = pygame.image.load('imagenes/instructions2.png')
 instructions_img = pygame.transform.scale_by(instructions_img, 1.4)
 instructions_pos = (298, 250)
 instructions_rect = instructions_img.get_rect(topleft=instructions_pos)
 
-quit_img = pygame.image.load('imagenes/quit.png')
+quit_img = pygame.image.load('imagenes/quit2.png')
 quit_img = pygame.transform.scale_by(quit_img, 1.4)
 quit_pos = (298, 300)
 quit_rect = quit_img.get_rect(topleft=quit_pos)
@@ -60,11 +60,11 @@ while run:
 
         #detectar acciones mouse
         if evento.type == pygame.MOUSEBUTTONDOWN:
-            if play_rect.collidepoint(evento.pos):
+            if play_rect.collidepoint(evento.pos) and pygame.mouse.get_pressed()[0]:
                 print("Iniciar juego")
-            elif instructions_rect.collidepoint(evento.pos):
+            elif instructions_rect.collidepoint(evento.pos) and pygame.mouse.get_pressed()[0]:
                 print("Mostrar instrucciones")
-            elif quit_rect.collidepoint(evento.pos):
+            elif quit_rect.collidepoint(evento.pos) and pygame.mouse.get_pressed()[0]:
                 pygame.quit()
 
 pygame.quit()
